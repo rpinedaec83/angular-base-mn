@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls:['./inicio.component.css']
+  template: '<h1>Bienvenido al curso de angular</h1>'
 })
 
 
