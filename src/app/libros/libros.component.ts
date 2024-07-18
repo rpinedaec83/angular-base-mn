@@ -9,7 +9,11 @@ import {Subscription} from 'rxjs';
 })
 export class LibrosComponent implements OnInit, OnDestroy {
   libros = [];
+
+
   constructor(private librosService: LibrosService) {}
+
+
   private libroSubscription: Subscription;
 
 
