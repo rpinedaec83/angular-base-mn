@@ -91,6 +91,7 @@ export class BooksService {
       filterValue,
     };
 
+
     // this.http.post<PaginationBooks>( this.baseUrl + 'Libro/Pagination', request)
     // .subscribe( (response) =>{
     //   this.bookPagination = response;

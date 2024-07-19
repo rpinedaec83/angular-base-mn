@@ -10,7 +10,7 @@ import {Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class AutoresService{
- // baseUrl = environment.baseUrl;
+  baseUrl = environment.baseUrl;
   private autoresLista: Autor[] = [];
 
   private autoresSubject = new Subject<Autor[]>();
@@ -19,11 +19,11 @@ export class AutoresService{
 
 
   obtenerAutores(){
-    // this.http.get<Autor[]>(this.baseUrl + 'Autor')
-    // .subscribe( (data) => {
-    //   this.autoresLista = data;
-    //   this.autoresSubject.next([...this.autoresLista]);
-    // });
+    this.http.get<Autor[]>(this.baseUrl + 'api/LibreriaServicio/autoresGenerico')
+    .subscribe( (data) => {
+      this.autoresLista = data;
+      this.autoresSubject.next([...this.autoresLista]);
+    });
   }
 
   obtenerActualListener(){
