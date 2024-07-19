@@ -83,8 +83,8 @@ registrarUsuario(usr: Usuario): void {
        token: ''
      };
 
-    // this.seguridadCambio.next(true);
-    // this.router.navigate(['/']);
+     this.seguridadCambio.next(true);
+     this.router.navigate(['/']);
   }
 
   login(loginData: LoginData): void {
@@ -99,6 +99,7 @@ registrarUsuario(usr: Usuario): void {
       username:''
     };
 
+    this.seguridadCambio.next(true);
     this.router.navigate(['/']);
 
     // this.http
@@ -123,7 +124,7 @@ registrarUsuario(usr: Usuario): void {
   }
 
   salirSesion() {
-  //  this.usuario = null;
+    this.usuario = null;
     // this.seguridadCambio.next(false);
     // localStorage.removeItem('token');
     // this.router.navigate(['/login']);

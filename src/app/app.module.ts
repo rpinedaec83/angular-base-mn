@@ -21,6 +21,12 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BarraComponent } from './navegacion/barra/barra.component';
 import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component';
+import { BooksComponent } from './books/books.component';
+import { BookNuevoComponent } from './books/book-nuevo.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AutoresComponent } from './autores/autores.component';
+
+//import { BookNuevoComponent } from './books/book-nuevo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component
     RegistrarComponent,
     LoginComponent,
     BarraComponent,
-    MenuListaComponent
+    MenuListaComponent,
+    BooksComponent,
+    BookNuevoComponent,
+    AutoresComponent,
   ],
   imports: [
     BrowserModule,
