@@ -13,7 +13,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { BookNuevoComponent } from './book-nuevo.component';
 import { Subscription } from 'rxjs';
-//import { PaginationBooks } from './pagination-books.model';
+import { PaginationBooks } from './pagination-books.model';
 
 @Component({
   selector: 'app-books',
@@ -115,12 +115,12 @@ export class BooksComponent implements OnInit, AfterViewInit, OnDestroy {
       this.filterValue
     );
     this.dataSource = new MatTableDataSource<Books>( this.booksService.booksLista);
-    // this.bookSubscription =  this.booksService
-    //   .obtenerActualListener()
-    //   .subscribe((pagination: PaginationBooks) => {
-    //     this.dataSource = new MatTableDataSource<Books>(pagination.data);
-    //     this.totalLibros = pagination.totalRows;
-    //   });
+    this.bookSubscription =  this.booksService
+      .obtenerActualListener()
+      .subscribe((pagination: PaginationBooks) => {
+        this.dataSource = new MatTableDataSource<Books>(pagination.data);
+        this.totalLibros = pagination.totalRows;
+      });
   }
 
   ngAfterViewInit(): void {

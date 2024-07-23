@@ -26,16 +26,16 @@ export class BookNuevoComponent implements OnInit, OnDestroy {
   constructor(
     private bookService: BooksService,
     private dialogRef: MatDialog,
-  //  private autoresService: AutoresService
+    private autoresService: AutoresService
   ) {}
 
   ngOnInit() {
-    // this.autoresService.obtenerAutores();
-    // this.autorSubscription = this.autoresService
-    //   .obtenerActualListener()
-    //   .subscribe((autoresBackend: Autor[]) => {
-    //     this.autores = autoresBackend;
-    //   });
+    this.autoresService.obtenerAutores();
+    this.autorSubscription = this.autoresService
+      .obtenerActualListener()
+      .subscribe((autoresBackend: Autor[]) => {
+        this.autores = autoresBackend;
+      });
   }
 
   selected(event: MatSelectChange) {

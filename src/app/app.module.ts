@@ -29,7 +29,7 @@ import { BookNuevoComponent } from './books/book-nuevo.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { AutoresComponent } from './autores/autores.component';
 
-//import { BookNuevoComponent } from './books/book-nuevo.component';
+import { SeguridadInterceptor } from './seguridad/seguridad-interceptor';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,11 @@ import { AutoresComponent } from './autores/autores.component';
     FlexLayoutModule,
     HttpClientModule,
   ],
-  providers: [LibrosService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: SeguridadInterceptor, multi: true },
+    LibrosService,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

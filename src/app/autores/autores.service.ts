@@ -19,7 +19,7 @@ export class AutoresService{
 
 
   obtenerAutores(){
-    this.http.get<Autor[]>(this.baseUrl + 'api/LibreriaServicio/autoresGenerico')
+    this.http.get<Autor[]>(this.baseUrl + 'Autor')
     .subscribe( (data) => {
       this.autoresLista = data;
       this.autoresSubject.next([...this.autoresLista]);
