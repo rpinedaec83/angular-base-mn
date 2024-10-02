@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   baseUrl : 'http://localhost:8561/'
+=======
+  baseUrl: 'http://192.168.1.55:8561/'
+>>>>>>> 8c58fa0337ee72e456e18621369e949e8b675562
 };
 
 /*

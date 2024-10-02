@@ -1,7 +1,9 @@
-<section  class="flex flex-col justify-center">
+<section fxLayoutAlign="center">
   <mat-card>
     <form
-       class="flex  flex-col"
+       fxLayout="column"
+       fxLayoutAlign="center center"
+       fxLayoutGap="10px"
        #f="ngForm"
        (ngSubmit)="loginUsuario(f)"
     >
@@ -19,6 +21,3 @@
     </form>
  </mat-card>
 </section>
-
-
-
